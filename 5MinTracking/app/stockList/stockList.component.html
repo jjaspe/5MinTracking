@@ -1,0 +1,18 @@
+<div >
+    <div class="list panel-primary col-sm-6">    
+        <div class="row headers panel-heading">
+            <span class="col-sm-4">Stock</span>
+            <span class="col-sm-4">Current Value</span>
+        </div>
+        <div  *ngFor="let stock of stocks" class="panel-body">
+            <stockItem [stock]="stock"></stockItem>
+            <button class="btn-primary col-sm-4" (click)="showGraph(stock)">Graph</button>
+        </div>   
+    </div>
+    
+</div>
+<div class="graph" *ngIf="selectedStock">
+    <div>
+        <graph [stock]="selectedStock"></graph>
+    </div>    
+</div>
